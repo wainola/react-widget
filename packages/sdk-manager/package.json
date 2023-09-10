@@ -1,0 +1,26 @@
+{
+  "name": "@wainola/react-sdk-manager",
+  "author": "wainola",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "module": "build/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --build --clean && tsc --build && tsc --build ./tsconfig.json",
+    "watch": "tsc --build --clean && tsc --build ./tsconfig.json --watch",
+    "clean": "rm -rf ./build",
+    "lint": "eslint ./src/**/*.ts",
+    "lint:fix": "eslint ./src/**/*.ts --fix"
+  },
+  "dependencies": {
+    "@buildwithsygma/sygma-sdk-core": "^2.2.0",
+    "@polkadot/api": "10.7.2",
+    "react": "^18.2.0",
+    "@wainola/react-wallet-manager": "1.0.0"
+  },
+  "devDependencies": {
+    "@polkadot/types": "10.7.2",
+    "typescript": "^5.2.2",
+    "@types/react": "18.2.21"
+  }
+}

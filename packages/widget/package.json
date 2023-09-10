@@ -1,0 +1,24 @@
+{
+  "name": "@wainola/react-widget",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "module": "build/index.js",
+  "license": "MIT",
+  "scripts": {
+    "watch": "tsc --build --clean && tsc --build ./tsconfig.json --watch",
+    "build": "tsc --build --clean && tsc --build ./tsconfig.json",
+    "clean": "rm -rf ./build",
+    "lint": "eslint ./src/**/*.ts",
+    "lint:fix": "eslint ./src/**/*.ts --fix"
+  },
+  "dependencies": {
+    "@r2wc/react-to-web-component": "^2.0.2",
+    "@wainola/react-sdk-manager": "1.0.0",
+    "@wainola/react-wallet-manager": "1.0.0",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "@types/react": "18.2.21"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "@wainola/react-wallet-manager",
+  "author": "wainola",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "license": "MIT",
+  "module": "build/index.js",
+  "dependencies": {
+    "@buildwithsygma/sygma-sdk-core": "^2.2.0",
+    "@polkadot/api": "10.7.2",
+    "@polkadot/extension-dapp": "^0.46.5",
+    "ethers": "5.7.2",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@polkadot/types": "10.7.2",
+    "typescript": "^5.2.2",
+    "@types/react": "18.2.21"
+  },
+  "eslintConfig": {
+    "extends": "../../.eslintrc.cjs"
+  },
+  "scripts": {
+    "build": "tsc --build --clean && tsc --build && tsc --build ./tsconfig.json",
+    "watch": "tsc --build --clean && tsc --build ./tsconfig.json --watch",
+    "clean": "rm -rf ./build",
+    "lint": "eslint ./src/**/*.ts",
+    "lint:fix": "eslint ./src/**/*.ts --fix"
+  }
+}
