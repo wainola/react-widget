@@ -3,32 +3,45 @@ import {
   State,
   SubstrateWallet,
   useEvmAccount,
-  useSubstrateAccount,
-} from "@wainola/react-wallet-manager";
-import { reducer } from "./reducer";
-import { useReducer } from "react";
+  useSubstrateAccount
+} from '@wainola/react-wallet-manager';
+import { reducer } from './reducer';
+import { useReducer } from 'react';
 
-export default function Widget() {
+export type WidgetProps = {
+  primaryColor?: string;
+  secondaryColor?: string;
+  borderRadiusPrimary?: string;
+  fontWeightPrimary?: string;
+};
+
+export default function Widget(props: WidgetProps) {
+  const {
+    primaryColor,
+    secondaryColor,
+    borderRadiusPrimary,
+    fontWeightPrimary
+  } = props;
   const evmWallet = new EVMWallet();
   const substrateWallet = new SubstrateWallet();
 
   const initState: State = {
     emvAccount: {
       address: null,
-      balance: null,
+      balance: null
     },
     substrateAccount: {
       address: null,
-      balance: null,
+      balance: null
     },
-    evmConnected: "idle",
-    substrateConnected: "idle",
+    evmConnected: 'idle',
+    substrateConnected: 'idle',
     evmWallet,
     substrateWallet,
     evmAssetTransfer: null,
     substrateAssetTransfer: null,
-    from: null,
-  }
+    from: null
+  };
 
   const [state, dispatcher] = useReducer(reducer, initState);
 
@@ -39,11 +52,11 @@ export default function Widget() {
   const handleConnnectEVM = () => {
     evmWallet.connect();
     dispatcher({
-      type: "TOGGLE_EVM_CONNECTION_STATUS",
+      type: 'TOGGLE_EVM_CONNECTION_STATUS',
       payload: {
-        status: "connected",
-        evmWallet,
-      },
+        status: 'connected',
+        evmWallet
+      }
     });
   };
 
@@ -51,16 +64,23 @@ export default function Widget() {
     await substrateWallet.connect();
 
     dispatcher({
-      type: "TOGGLE_SUBSTRATE_CONNECTION_STATUS",
+      type: 'TOGGLE_SUBSTRATE_CONNECTION_STATUS',
       payload: {
-        status: "connected",
-        substrateWallet,
-      },
+        status: 'connected',
+        substrateWallet
+      }
     });
   };
 
   return (
-    <div>
+    <div
+      style={{
+        border: `2px solid ${primaryColor || ''}`,
+        backgroundColor: secondaryColor || '',
+        borderRadius: borderRadiusPrimary || '',
+        fontWeight: fontWeightPrimary || ''
+      }}
+    >
       <button onClick={handleConnnectEVM}>Connect EVM Wallet</button>
 
       <button onClick={handleConnectSubstrate}>Connect Substrate Wallet</button>

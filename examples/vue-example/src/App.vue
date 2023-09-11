@@ -13,7 +13,12 @@ import '@wainola/react-widget'
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
-  <widget-component></widget-component>
+  <widget-component
+    primayColor="white"
+    secondaryColor="orange"
+    borderRadiusPrimary="10px"
+    fontWeightPrimary="600"
+  ></widget-component>
 </template>
 
 <style scoped>
