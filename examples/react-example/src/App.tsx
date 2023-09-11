@@ -29,7 +29,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <Widget />
+      <Widget  primaryColor='red' secondaryColor='purple' borderRadiusPrimary='5px' fontWeightPrimary='700'/>
     </>
   )
 }
