@@ -55,7 +55,7 @@
 #       - run: yarn build:wallet-manager
 #         if: ${{ steps.release.outputs.releases_created }}
 
-#       - run: npm publish --workspace=@wainola/lit-wallet-manager --access public
+#       - run: npm publish --workspace=@wainola/react-wallet-manager --access public
 #         env:
 #           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 #         if: ${{ steps.release.outputs.releases_created }}
