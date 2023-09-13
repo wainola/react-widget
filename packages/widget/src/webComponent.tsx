@@ -4,7 +4,6 @@ import { Widget } from '.';
 declare global {
   export interface Window {
     widgetProperties: (func: () => number | string) => void;
-    setupEvent: CustomEvent;
   }
 }
 
@@ -14,7 +13,8 @@ const WidgetWebComponet = r2wc(Widget, {
     primaryColor: 'string',
     secondaryColor: 'string',
     borderRadiusPrimary: 'string',
-    fontWeightPrimary: 'string'
+    fontWeightPrimary: 'string',
+    resourceList: 'array'
   }
 });
 

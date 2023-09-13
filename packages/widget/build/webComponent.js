@@ -6,7 +6,8 @@ const WidgetWebComponet = r2wc(Widget, {
         primaryColor: 'string',
         secondaryColor: 'string',
         borderRadiusPrimary: 'string',
-        fontWeightPrimary: 'string'
+        fontWeightPrimary: 'string',
+        resourceList: 'array'
     }
 });
 customElements.define('widget-component', WidgetWebComponet);

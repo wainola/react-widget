@@ -3,7 +3,7 @@ import { EVMWallet, SubstrateWallet, useEvmAccount, useSubstrateAccount } from '
 import { reducer } from './reducer';
 import { useReducer } from 'react';
 export default function Widget(props) {
-    const { primaryColor, secondaryColor, borderRadiusPrimary, fontWeightPrimary } = props;
+    const { primaryColor, secondaryColor, borderRadiusPrimary, fontWeightPrimary, resourceList } = props;
     const evmWallet = new EVMWallet();
     const substrateWallet = new SubstrateWallet();
     const initState = {
@@ -23,6 +23,7 @@ export default function Widget(props) {
         substrateAssetTransfer: null,
         from: null
     };
+    console.log('Resource list', resourceList);
     const [state, dispatcher] = useReducer(reducer, initState);
     useEvmAccount(state, dispatcher);
     useSubstrateAccount(state, dispatcher);

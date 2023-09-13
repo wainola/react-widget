@@ -18,6 +18,28 @@ import '@wainola/react-widget'
     secondaryColor="orange"
     borderRadiusPrimary="10px"
     fontWeightPrimary="600"
+    .resourceList='[
+        {
+          "resourceId": "0x0000000000000000000000000000000000000000000000000000000000000300",
+          "type": "fungible",
+          "address": "0x3F9A68fF29B3d86a6928C44dF171A984F6180009",
+          "symbol": "ERC20LRTest",
+          "decimals": 18
+        },
+        {
+          "resourceId": "0x0000000000000000000000000000000000000000000000000000000000000500",
+          "type": "permissionlessGeneric",
+          "address": "",
+          "symbol": "",
+          "decimals": 0
+        },
+        {
+          "resourceId": "0x0000000000000000000000000000000000000000000000000000000000001000",
+          "type": "fungible",
+          "address": "0xB376b0Ee6d8202721838e76376e81eEc0e2FE864",
+          "symbol": "GPHA",
+          "decimals": 18
+        }]'
   ></widget-component>
 </template>
 

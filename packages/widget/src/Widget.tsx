@@ -13,6 +13,13 @@ export type WidgetProps = {
   secondaryColor?: string;
   borderRadiusPrimary?: string;
   fontWeightPrimary?: string;
+  resourceList?: Array<{
+    resourceId: string;
+    type: 'fungible' | 'permissionlessGeneric';
+    address: string;
+    symbol: string;
+    decimals: number;
+  }>;
 };
 
 export default function Widget(props: WidgetProps) {
@@ -20,7 +27,8 @@ export default function Widget(props: WidgetProps) {
     primaryColor,
     secondaryColor,
     borderRadiusPrimary,
-    fontWeightPrimary
+    fontWeightPrimary,
+    resourceList
   } = props;
   const evmWallet = new EVMWallet();
   const substrateWallet = new SubstrateWallet();
@@ -42,6 +50,7 @@ export default function Widget(props: WidgetProps) {
     substrateAssetTransfer: null,
     from: null
   };
+  console.log('Resource list', resourceList);
 
   const [state, dispatcher] = useReducer(reducer, initState);
 
